@@ -1,6 +1,6 @@
 import React from "react";
 import { createRoot, Root } from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
+
 import "./index.css";
 import "./public-path"; //这个是解决静态资源加载的问题
 import App from "./App";
@@ -18,11 +18,7 @@ function render(props: any) {
     ? container.querySelector("#rootR")
     : document.getElementById("rootR");
   root = createRoot(dom);
-  root.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  );
+  root.render(<App />);
 }
 /**
  * bootstrap 只会在微应用初始化的时候调用一次，下次微应用重新进入时会直接调用 mount 钩子，不会再重复触发 bootstrap。
